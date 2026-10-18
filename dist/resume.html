@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shavait Pandita — Resume | IIT Indore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1a1a1a;
+    --sub: #4a4a4a;
+    --line: #d1d5db;
+    --accent: #b91c1c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.5;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .controls {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .btn-print {
+    background: #e0231c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity .2s;
+  }
+  .btn-print:hover { opacity: .9; }
+  .btn-back {
+    color: #9aa8c0;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .btn-back:hover { color: #fff; }
+
+  .page {
+    width: 100%;
+    max-width: 860px;
+    background: #ffffff;
+    padding: 48px 56px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    border-radius: 4px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #000;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+  .name {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .meta-left {
+    font-size: 12.5px;
+    color: var(--sub);
+    margin-top: 4px;
+  }
+  .meta-right {
+    text-align: right;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .meta-right a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+  .meta-right a:hover { text-decoration: underline; }
+
+  h2 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    margin: 18px 0 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-bottom: 14px;
+  }
+  th, td {
+    border: 1px solid #999;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  th { background: #f3f4f6; font-weight: 600; }
+
+  .item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 600;
+    font-size: 13.5px;
+  }
+  .item-sub {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--sub);
+    margin-bottom: 4px;
+  }
+  .item-date {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--sub);
+  }
+
+  ul {
+    padding-left: 18px;
+    margin-bottom: 12px;
+  }
+  li {
+    margin-bottom: 4px;
+    font-size: 12.5px;
+    color: #262626;
+  }
+
+  .skills-list li {
+    list-style: none;
+    margin-bottom: 4px;
+  }
+  .skills-list strong {
+    font-weight: 600;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .controls { display: none; }
+    .page { box-shadow: none; padding: 24px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <a href="/landing-pages/kage.html" class="btn-back">← Back to Portfolio</a>
+  <button class="btn-print" onclick="window.print()">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print / Save PDF
+  </button>
+</div>
+
+<div class="page">
+  <header>
+    <div>
+      <div class="name">Shavait Pandita</div>
+      <div class="meta-left">
+        Roll No.: 250004042<br>
+        B.Tech. Civil Engineering<br>
+        Indian Institute of Technology, Indore
+      </div>
+    </div>
+    <div class="meta-right">
+      +91-9906868312<br>
+      <a href="mailto:ershavait@gmail.com">ershavait@gmail.com</a><br>
+      <a href="mailto:ce250004042@iiti.ac.in">ce250004042@iiti.ac.in</a><br>
+      <a href="https://github.com/ershavait" target="_blank">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/shavait-pandita-2ab4b92a5" target="_blank">LinkedIn</a><br>
+      <a href="https://codeforces.com/profile/Shvait" target="_blank">Codeforces</a> | 
+      <a href="https://leetcode.com/u/Shvait/" target="_blank">LeetCode</a>
+    </div>
+  </header>
+
+  <h2>Education</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Degree/Certificate</th>
+        <th>Institute/Board</th>
+        <th>CGPA/Percentage</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>B.Tech. (Civil Engineering)</td>
+        <td>Indian Institute of Technology, Indore</td>
+        <td>7.78 (Current)</td>
+        <td>2025 – Present</td>
+      </tr>
+      <tr>
+        <td>Senior Secondary</td>
+        <td>JKBOSE</td>
+        <td>89.8%</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Secondary</td>
+        <td>JKBOSE</td>
+        <td>96.6%</td>
+        <td>2023</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Research</h2>
+  <div>
+    <div class="item-head">
+      <span>• AAAI-27 Undergraduate Consortium — Research Proposal</span>
+      <span class="item-date">2026</span>
+    </div>
+    <div class="item-sub">Uncertainty-Aware Graph Intelligence for Autonomous eVTOL Traffic</div>
+    <ul>
+      <li>Proposed a GNN predictor for conflicts, sector congestion and vertiport queues, with calibrated uncertainty.</li>
+      <li>Defined the Airspace Risk Horizon lead-time metric and uncertainty-driven selective autonomy with a safety shield.</li>
+      <li>Planned BlueSky simulation on a DFW-style network (50–200 aircraft) and an open-source benchmark.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+
+  <div>
+    <div class="item-head">
+      <span>• FlashGuard — Real-Time Fraud Detection on Pathway (IITISoC 2026)</span>
+      <span class="item-date">Jul 2026</span>
+    </div>
+    <div class="item-sub">Pathway, XGBoost, Half-Space Trees, LangGraph, RAG, Redis, Docker</div>
+    <ul>
+      <li>Built the core streaming pipeline in Pathway: Kafka ingestion, live joins with profiles and sanctions watchlists, and 10-min sliding-window analytics per account.</li>
+      <li>Ran an XGBoost + Half-Space Trees ensemble as a Pathway UDF, scoring and learning online; clear cases decided in ~15–20 ms.</li>
+      <li>Built a live compliance RAG on Pathway's DocumentStore that hot-reloads AML/KYC policies without a restart.</li>
+      <li>Used Pathway event streams as an audit ledger of agent decisions; ambiguous cases go to LangGraph, with a Redis watchdog cutting token use 80%+.</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="item-head">
+      <span>• Tacotron2 + HiFi-GAN — End-to-End Neural Text-to-Speech</span>
+      <span class="item-date">2026</span>
+    </div>
+    <div class="item-sub">PyTorch, Tacotron2, HiFi-GAN, HF Accelerate, LJSpeech</div>
+    <ul>
+      <li>Built a modular TTS stack in PyTorch (text frontend → Tacotron2 → HiFi-GAN) with a decoupled tokenizer, so new scripts (e.g., Indic) need only vocabulary/frontend changes.</li>
+      <li>Implemented Tacotron2 from scratch: Conv1D + BiLSTM encoder, location-sensitive attention for robust text-audio alignment, 2-layer LSTM decoder with PreNet, 5-layer Conv1D PostNet.</li>
+      <li>Streaming-ready inference: step-wise autoregressive mel decoding with stop-token gating into a fully convolutional HiFi-GAN (256× upsampling, MRF, MPD + MSD).</li>
+      <li>Curated LJSpeech mels (dB-scaled, [-4, 4]) and generated a synthetic Tacotron2 mel corpus to fine-tune HiFi-GAN via Accelerate; UTMOS 3.37 → 3.74 (Griffin-Lim: 1.88).</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="item-head">
+      <span>• GPT from Scratch — Decoder-Only Transformer</span>
+      <span class="item-date">2026</span>
+    </div>
+    <div class="item-sub">PyTorch, Transformers, RoPE, Tiny Shakespeare</div>
+    <ul>
+      <li>Implemented a ~10M parameter decoder-only Transformer from scratch in PyTorch (6 layers, 6 heads, 384-d): causal multi-head attention, RoPE, GELU, residual connections.</li>
+      <li>Built a modular data, training and generation pipeline with a character-level tokenizer, 90/10 split, validation tracking, periodic + best-model checkpointing, and gradient clipping.</li>
+      <li>Added weight tying, label smoothing, and 200-step warmup + cosine LR decay for training stability.</li>
+      <li>Added autoregressive generation with temperature and top-k sampling; validation loss dropped from 4.19 to ~1.95.</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="item-head">
+      <span>• InterviewAI &amp; Campus Ride-Sharing (DaemonLab)</span>
+      <span class="item-date">2025 – 2026</span>
+    </div>
+    <div class="item-sub">Full-Stack Development, React, Node.js, TypeScript</div>
+    <ul>
+      <li>Built InterviewAI mock interview platform with dynamic question generation and response scoring.</li>
+      <li>Co-developed the official campus ride-sharing web platform under DaemonLab for IIT Indore student and faculty transit.</li>
+    </ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <ul class="skills-list">
+    <li><strong>• Languages:</strong> Python, C++, JavaScript, SQL</li>
+    <li><strong>• AI/ML:</strong> PyTorch, XGBoost, Pandas, NumPy, Transformers, Sequence Modeling, Fine-tuning (LoRA), NLP</li>
+    <li><strong>• Speech &amp; Audio:</strong> TTS, Mel-Spectrograms, Neural Vocoders, Streaming Inference</li>
+    <li><strong>• Data Engineering:</strong> Dataset Curation, Synthetic Data Generation, Streaming Pipelines, Feature Engineering</li>
+    <li><strong>• GenAI:</strong> LLMs, RAG, Embeddings, Vector Databases, LangGraph</li>
+    <li><strong>• Backend &amp; Web:</strong> Node.js, Express.js, React, REST APIs, Firebase, Razorpay, PostgreSQL</li>
+    <li><strong>• System Design:</strong> Scalability, Caching, Kafka, Redis, Pathway</li>
+    <li><strong>• Tools:</strong> Git, GitHub, Docker</li>
+  </ul>
+
+  <h2>Positions of Responsibility</h2>
+  <ul>
+    <li><strong>Web Development Associate</strong>, E-Summit 2026, IIT Indore <span style="float:right; font-size:12px; color:#555;">May 2026 – Aug 2026</span></li>
+    <li><strong>Volunteer</strong>, Programming Club, IIT Indore <span style="float:right; font-size:12px; color:#555;">2025 – Present</span></li>
+    <li><strong>Volunteer</strong>, AI and Data Science, Maths Club, IIT Indore <span style="float:right; font-size:12px; color:#555;">2025 – Present</span></li>
+  </ul>
+
+  <h2>Achievements</h2>
+  <ul>
+    <li><strong>NSEP</strong> (National Standard Examination in Physics) — Centre Top 1% (2024–25)</li>
+    <li>Qualified for <strong>Regional Mathematics Olympiad (RMO)</strong> (2024–25)</li>
+    <li><strong>IISER Aptitude Test (IAT)</strong> — All India Rank 1389 (2025)</li>
+    <li><strong>Codeforces</strong> — Maximum rating 1315; best rank 2683 among 32,000 participants (2025 – Present)</li>
+    <li><strong>Data Structures &amp; Algorithms</strong> — Solved 250+ problems across LeetCode and Codeforces (2025 – Present)</li>
+  </ul>
+</div>
+
+</body>
+</html>
