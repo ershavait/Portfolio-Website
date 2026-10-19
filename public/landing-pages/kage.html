@@ -1450,7 +1450,7 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
 /* --- Parallax Scroll Squeeze Transition --- */
 .sec, .hero, .build-section {
   will-change: transform, opacity, border-radius;
-  transform-origin: center top;
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.12s ease-out, border-radius 0.12s ease-out;
 }
 
 
@@ -2195,9 +2195,9 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
 <!-- ============================================================ 05: EXACT THEMED Let's Build Something (matching Kage theme) -->
 <footer class="build-section" id="contact" data-cam="5">
   <div data-rv="up">
-    <div class="eyebrow" data-rv="fade" style="margin-bottom: 18px; font-size: 12.5px; letter-spacing: .22em;"><span class="dot" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--vermilion);box-shadow:0 0 12px var(--vermilion);margin-right:8px;vertical-align:middle;"></span> Let's Build Something</div>
-    <h2 class="display h-sec" style="font-size: clamp(48px, 6.8vw, 92px); letter-spacing: -.025em; line-height: 1.04; margin-bottom: 20px;">Let's Build Something.</h2>
-    <p class="body-lg" style="max-width: 600px; margin: 0 auto 40px; color: var(--bone-dim); font-size: clamp(16px, 1.35vw, 19.5px); line-height: 1.6;">I'm interested in collaborating on machine learning, neural speech synthesis, and real-time systems projects. I'm also open to research discussions and software engineering opportunities.</p>
+    <div class="eyebrow" data-rv="fade" style="margin-bottom: 22px; font-size: 14px; letter-spacing: .24em;"><span class="dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--vermilion);box-shadow:0 0 12px var(--vermilion);margin-right:9px;vertical-align:middle;"></span> Let's Build Something</div>
+    <h2 class="display h-sec" style="font-size: clamp(56px, 8.2vw, 110px); letter-spacing: -.03em; line-height: 1.02; margin-bottom: 24px;">Let's Build Something.</h2>
+    <p class="body-lg" style="max-width: 680px; margin: 0 auto 44px; color: var(--bone-dim); font-size: clamp(18px, 1.6vw, 22px); line-height: 1.65;">I'm interested in collaborating on machine learning, neural speech synthesis, and real-time systems projects. I'm also open to research discussions and software engineering opportunities.</p>
     
     <div class="build-buttons">
       <!-- Download Resume Button linked directly to workspace PDF -->
@@ -5912,61 +5912,35 @@ else addEventListener('DOMContentLoaded', boot);
 })();
 </script>
 <script>
-  // Parallax Scroll Squeeze Effect — High-Impact & Responsive
+  // Parallax Scroll Squeeze Effect
   function initScrollSqueeze() {
     const targets = document.querySelectorAll('.sec, .hero, .build-section');
-    let ticking = false;
-
-    function update() {
+    function onScroll() {
       const vh = window.innerHeight;
       targets.forEach(el => {
         const rect = el.getBoundingClientRect();
         const h = rect.height || vh;
-
-        // When element is exiting the top of the viewport
+        // As element top scrolls above the top of the viewport
         if (rect.top < 0 && rect.bottom > 0) {
-          const range = Math.min(vh * 0.7, h * 0.5);
-          const raw = -rect.top / range;
-          const progress = Math.min(1, Math.max(0, raw));
-          
-          // Cubic ease-out curve for rapid initial squeeze
-          const p = 1 - Math.pow(1 - progress, 2.2);
-
-          const scaleX  = 1 - p * 0.15;
-          const scaleY  = 1 - p * 0.32;
-          const moveUp  = p * -90;
-          const fade    = 1 - p * 0.65;
-          const radius  = Math.round(p * 36);
-          const blur    = p * 5;
-
-          el.style.transform = `translate3d(0, ${moveUp.toFixed(1)}px, 0) scale(${scaleX.toFixed(3)}, ${scaleY.toFixed(3)})`;
+          const progress = Math.min(1, Math.max(0, -rect.top / (h * 0.75)));
+          const scaleX = 1 - (progress * 0.08);
+          const scaleY = 1 - (progress * 0.06);
+          const translateY = progress * -24;
+          const opacity = 1 - (progress * 0.45);
+          const radius = Math.round(progress * 28);
+          el.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scaleX}, ${scaleY})`;
           el.style.transformOrigin = 'center top';
-          el.style.opacity = fade.toFixed(2);
+          el.style.opacity = opacity;
           el.style.borderRadius = `${radius}px`;
-          el.style.filter = blur > 0.4 ? `blur(${blur.toFixed(1)}px)` : '';
-          el.style.overflow = 'hidden';
-          el.style.pointerEvents = progress > 0.9 ? 'none' : '';
         } else {
           el.style.transform = '';
           el.style.opacity = '';
           el.style.borderRadius = '';
-          el.style.filter = '';
-          el.style.overflow = '';
-          el.style.pointerEvents = '';
         }
       });
-      ticking = false;
     }
-
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-    }
-
     window.addEventListener('scroll', onScroll, { passive: true });
-    update();
+    onScroll();
   }
   try { initScrollSqueeze(); } catch(e) { console.warn(e); }
 </script>
