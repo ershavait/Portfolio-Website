@@ -898,6 +898,26 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
   gap: 28px;
   margin-top: 40px;
 }
+.proj-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 28px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (min-width: 768px) {
+  .proj-title {
+    min-height: 3.2rem;
+  }
+  .proj-desc {
+    min-height: 4.2rem;
+  }
+}
+.proj-pills {
+  margin-top: auto;
+}
 .proj-card {
   position: relative;
   background: rgba(10, 14, 18, 0.72);
@@ -1430,7 +1450,7 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
 /* --- Parallax Scroll Squeeze Transition --- */
 .sec, .hero, .build-section {
   will-change: transform, opacity, border-radius;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.12s ease-out, border-radius 0.12s ease-out;
+  transform-origin: center top;
 }
 
 
@@ -2035,16 +2055,15 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
       </div>
     </a>
 
-    <!-- Project 3: Cynaptics Mini-GPT -->
+    <!-- Project 3: Mini-GPT -->
     <a class="proj-card" href="https://github.com/ershavait/cynaptics-mini-gpt" target="_blank" rel="noopener" data-rv="up" data-cursor>
-      <div class="proj-tag-badge">Cynaptics Club &bull; Generative AI</div>
-      <h3 class="proj-title">Cynaptics Mini-GPT &mdash; Decoder-Only Transformer</h3>
+      <div class="proj-tag-badge">Generative AI</div>
+      <h3 class="proj-title">Mini-GPT &mdash; Decoder-Only Transformer</h3>
       <p class="proj-desc">Approximately 10-million-parameter autoregressive language model implemented from scratch in PyTorch using a six-layer, six-head decoder-only Transformer with 384-dimensional hidden representations.</p>
       <ul class="proj-bullets">
-        <li>Implemented causal self-attention, Rotary Position Embeddings (RoPE), residual connections, and a character-level training pipeline.</li>
-        <li>Training incorporated gradient clipping, periodic checkpointing, weight tying, label smoothing, linear warmup, and cosine learning-rate decay.</li>
-        <li>Evaluation: validation loss decreased from 4.19 to approximately 1.95 on a 90/10 training-validation split.</li>
-        <li>Generation supports temperature control, top-k sampling, and nucleus sampling.</li>
+        <li>Implemented causal self-attention, Rotary Position Embeddings (RoPE), residual connections, and character-level tokenization.</li>
+        <li>Trained 10M-parameter model with gradient clipping, periodic checkpointing, weight tying, label smoothing, and cosine decay.</li>
+        <li>Evaluation &amp; Generation: validation loss reduced from 4.19 to ~1.95 on 90/10 split; supports temperature control, top-k, and nucleus sampling.</li>
       </ul>
       <div class="proj-pills">
         <span class="proj-pill">PyTorch</span>
@@ -2061,7 +2080,7 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
 
     <!-- Project 4: InterviewAI -->
     <div class="proj-card" data-rv="up">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+      <div class="proj-card-top-row">
         <div class="proj-tag-badge" style="margin-bottom: 0;">Web Application &bull; GenAI</div>
         <a class="demo-badge-pill" href="https://interviewai-hmc5.onrender.com/" target="_blank" rel="noopener" data-cursor>
           <span class="live-dot"></span>
@@ -2096,27 +2115,31 @@ body[data-layout-footer="b"] .foot-base span:last-child{ text-align:right; }
     </div>
 
     <!-- Project 5: Campus Ride Sharing -->
-    <a class="proj-card" href="https://github.com/DaemonLab/Ride-Sharing-Website" target="_blank" rel="noopener" data-rv="up" data-cursor>
-      <div class="proj-tag-badge">DaemonLab IIT Indore &bull; Campus Web App</div>
-      <h3 class="proj-title">Campus Ride-Sharing Web Platform</h3>
-      <p class="proj-desc">Contributed to the development of a campus ride-sharing web application designed to help students and faculty coordinate shared commutes.</p>
+    <div class="proj-card" data-rv="up">
+      <div class="proj-card-top-row">
+        <div class="proj-tag-badge" style="margin-bottom: 0;">DaemonLab IIT Indore &bull; Campus Web App</div>
+      </div>
+      <h3 class="proj-title">Campus Ride-Sharing &mdash; Collaborative Transit Web Platform</h3>
+      <p class="proj-desc">Contributed to the development of a campus ride-sharing web application designed to help students and faculty coordinate shared commutes across campus.</p>
       <ul class="proj-bullets">
-        <li>The platform supports ride discovery, scheduling, and seat reservations with ride-status updates and driver-passenger notifications.</li>
-        <li>Responsive interface built using React and TypeScript.</li>
-        <li>Technical focus: frontend development, API integration, state management, and transportation workflow design.</li>
+        <li>Automated ride discovery, scheduling, and seat reservations with ride-status updates and driver-passenger notifications.</li>
+        <li>Engineered responsive, modular frontend architecture using React, TypeScript, and Tailwind CSS for mobile and desktop coordination.</li>
+        <li>Technical focus: transportation workflow design, RESTful API integration, persistent session handling, and state management.</li>
       </ul>
       <div class="proj-pills">
-        <span class="proj-pill">JavaScript</span>
+        <span class="proj-pill">TypeScript</span>
         <span class="proj-pill">React</span>
         <span class="proj-pill">Node.js</span>
-        <span class="proj-pill">Logistics</span>
         <span class="proj-pill">Tailwind</span>
+        <span class="proj-pill">Logistics</span>
       </div>
-      <div class="proj-link-row">
-        <span>View Source on GitHub</span>
-        <svg viewBox="0 0 14 14" fill="none"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.3"/></svg>
+      <div class="proj-action-buttons">
+        <a class="proj-action-btn secondary" href="https://github.com/DaemonLab/Ride-Sharing-Website" target="_blank" rel="noopener" data-cursor style="width: 100%; justify-content: center;">
+          <span>View Source on GitHub</span>
+          <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.3"/></svg>
+        </a>
       </div>
-    </a>
+    </div>
 
   </div>
 </section>
@@ -5889,35 +5912,61 @@ else addEventListener('DOMContentLoaded', boot);
 })();
 </script>
 <script>
-  // Parallax Scroll Squeeze Effect
+  // Parallax Scroll Squeeze Effect — High-Impact & Responsive
   function initScrollSqueeze() {
     const targets = document.querySelectorAll('.sec, .hero, .build-section');
-    function onScroll() {
+    let ticking = false;
+
+    function update() {
       const vh = window.innerHeight;
       targets.forEach(el => {
         const rect = el.getBoundingClientRect();
         const h = rect.height || vh;
-        // As element top scrolls above the top of the viewport
+
+        // When element is exiting the top of the viewport
         if (rect.top < 0 && rect.bottom > 0) {
-          const progress = Math.min(1, Math.max(0, -rect.top / (h * 0.75)));
-          const scaleX = 1 - (progress * 0.08);
-          const scaleY = 1 - (progress * 0.06);
-          const translateY = progress * -24;
-          const opacity = 1 - (progress * 0.45);
-          const radius = Math.round(progress * 28);
-          el.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scaleX}, ${scaleY})`;
+          const range = Math.min(vh * 0.7, h * 0.5);
+          const raw = -rect.top / range;
+          const progress = Math.min(1, Math.max(0, raw));
+          
+          // Cubic ease-out curve for rapid initial squeeze
+          const p = 1 - Math.pow(1 - progress, 2.2);
+
+          const scaleX  = 1 - p * 0.15;
+          const scaleY  = 1 - p * 0.32;
+          const moveUp  = p * -90;
+          const fade    = 1 - p * 0.65;
+          const radius  = Math.round(p * 36);
+          const blur    = p * 5;
+
+          el.style.transform = `translate3d(0, ${moveUp.toFixed(1)}px, 0) scale(${scaleX.toFixed(3)}, ${scaleY.toFixed(3)})`;
           el.style.transformOrigin = 'center top';
-          el.style.opacity = opacity;
+          el.style.opacity = fade.toFixed(2);
           el.style.borderRadius = `${radius}px`;
+          el.style.filter = blur > 0.4 ? `blur(${blur.toFixed(1)}px)` : '';
+          el.style.overflow = 'hidden';
+          el.style.pointerEvents = progress > 0.9 ? 'none' : '';
         } else {
           el.style.transform = '';
           el.style.opacity = '';
           el.style.borderRadius = '';
+          el.style.filter = '';
+          el.style.overflow = '';
+          el.style.pointerEvents = '';
         }
       });
+      ticking = false;
     }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    update();
   }
   try { initScrollSqueeze(); } catch(e) { console.warn(e); }
 </script>
